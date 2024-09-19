@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 1.4</title>
+	</head>
+	<body>
+		<input type="number" id="diameter" placeholder="Nhập số" />
+		<input onclick="ket_qua()" type="button" value="kết quả" />
+		<h1 id="chu_vi">Chu vi hình tròn:</h1>
+		<script>
+			function ket_qua() {
+				let diameter = +document.getElementById("diameter").value;
+				const chu_vi = diameter * 3.14;
+				document.getElementById("chu_vi").innerText =
+					"Chu vi hình tròn: " + chu_vi;
+			}
+		</script>
+	</body>
+</html>

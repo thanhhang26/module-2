@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 1.3</title>
+	</head>
+	<body>
+		<input type="number" id="radius" placeholder="Nhập số" />
+		<input onclick="ket_qua()" type="button" value="kết quả" />
+		<h1 id="dien_tich">Diện tích hình tròn:</h1>
+		<script>
+			function ket_qua() {
+				let radius = +document.getElementById("radius").value;
+				const dien_tich = radius * radius * 3.14;
+				document.getElementById("dien_tich").innerText =
+					"Diện tích hình tròn: " + dien_tich;
+			}
+		</script>
+	</body>
+</html>
