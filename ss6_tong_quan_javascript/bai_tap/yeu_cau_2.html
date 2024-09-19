@@ -6,17 +6,17 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<input type="number" id="input1" placeholder="Nhập điểm môn toán" />
-		<input type="number" id="input2" placeholder="Nhập điểm môn lý" />
-		<input type="number" id="input3" placeholder="Nhập điểm môn hoá" />
+		<input type="number" id="math" placeholder="Nhập điểm môn toán" />
+		<input type="number" id="physics" placeholder="Nhập điểm môn lý" />
+		<input type="number" id="chemistry" placeholder="Nhập điểm môn hoá" />
 		<input onclick="avg()" type="button" value="Điểm trung bình của 3 môn" />
 		<h1 id="avg"></h1>
 		<script>
 			function avg() {
-				let math = +document.getElementById("input1").value;
-				let physical = +document.getElementById("input2").value;
-				let chemistry = +document.getElementById("input3").value;
-				let sum = (a + b + c) / 3;
+				let math = +document.getElementById("math").value;
+				let physical = +document.getElementById("physics").value;
+				let chemistry = +document.getElementById("chemistry").value;
+				let sum = (math + physics + chemistry) / 3;
 				document.getElementById("avg").innerHTML = `diem trung  binh: ${sum}`;
 			}
 		</script>
