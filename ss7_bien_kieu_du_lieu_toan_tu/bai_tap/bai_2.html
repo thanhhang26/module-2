@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>bai 2</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			.text {
+				display: flex;
+				margin: 10px 30px;
+				align-items: center;
+
+				line-height: 30px;
+			}
+			.text1 {
+				flex: 1;
+				flex-direction: column;
+			}
+			.text2 {
+				flex: 1;
+				flex-direction: column;
+			}
+			.text3 {
+				flex: 1;
+				flex-direction: column;
+			}
+			#number {
+				height: 40px;
+			}
+			#From {
+				height: 40px;
+				width: 40%;
+			}
+			#To {
+				height: 40px;
+				width: 40%;
+			}
+
+			.button {
+				flex: 1;
+			}
+			.convert {
+				background-color: #8f82cf;
+				border: 1px solid #809ded;
+				width: 40%;
+				height: 40px;
+				font-size: 15px;
+				color: white;
+				margin-top: 20px;
+			}
+			#result {
+				color: #809ded;
+				margin-left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="text">
+			<div class="text1">
+				<p>Amount</p>
+				<input type="number" id="number" />
+			</div>
+			<div class="text2">
+				<p>From Currency</p>
+				<select id="From">
+					<option value="VND">VND</option>
+					<option value="USD">USD</option>
+				</select>
+			</div>
+			<div class="text3">
+				<p>To Currency</p>
+				<select id="To">
+					<option value="VND">VND</option>
+					<option value="USD">USD</option>
+				</select>
+			</div>
+			<div class="button">
+				<input
+					onclick="convert()"
+					type="button"
+					class="convert"
+					value="convert"
+				/>
+			</div>
+		</div>
+		<p id="result"></p>
+		<script>
+			function convert() {
+				let amount = +document.getElementById("number").value;
+				let fromCurrency = document.getElementById("From").value;
+				let toCurrency = document.getElementById("To").value;
+
+				if (fromCurrency == "VND" && toCurrency == "USD") {
+					result = amount / 24.55;
+				} else if (fromCurrency == "USD" && toCurrency == "VND") {
+					result = amount * 24.55;
+				} else {
+					result = amount;
+				}
+				document.getElementById("result").innerHTML = "Result: " + result;
+			}
+		</script>
+	</body>
+</html>
