@@ -7,14 +7,14 @@
 	</head>
 	<body>
 		<input type="number" id="radius" placeholder="Nhập số" />
-		<input onclick="ket_qua()" type="button" value="kết quả" />
+		<input onclick="ketQua()" type="button" value="kết quả" />
 		<h1 id="dien_tich">Diện tích hình tròn:</h1>
 		<script>
-			function ket_qua() {
-				let radius = +document.getElementById("radius").value;
-				const dien_tich = radius * radius * 3.14;
+			function ketQua() {
+				let banKinh = +document.getElementById("radius").value;
+				const dienTich = banKinh * banKinh * 3.14;
 				document.getElementById("dien_tich").innerText =
-					"Diện tích hình tròn: " + dien_tich;
+					"Diện tích hình tròn: " + dienTich;
 			}
 		</script>
 	</body>

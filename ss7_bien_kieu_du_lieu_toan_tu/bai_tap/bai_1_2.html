@@ -7,13 +7,13 @@
 	</head>
 	<body>
 		<input type="number" id="celsius" placeholder="Nhập độ C" />
-		<input onclick="chuyen_doi()" type="button" value="Kết quả" />
-		<h1 id="do_F">Kết quả:</h1>
+		<input onclick="chuyenDoi()" type="button" value="Kết quả" />
+		<h1 id="doF">Kết quả:</h1>
 		<script>
-			function chuyen_doi() {
-				let celsius = +document.getElementById("celsius").value;
-				const do_F = (celsius * 9) / 5 + 32;
-				document.getElementById("do_F").innerText = "Kết quả: " + do_F;
+			function chuyenDoi() {
+				let doC = +document.getElementById("celsius").value;
+				const doF = (doC * 9) / 5 + 32;
+				document.getElementById("doF").innerText = "Kết quả: " + doF;
 			}
 		</script>
 	</body>

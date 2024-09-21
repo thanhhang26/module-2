@@ -91,18 +91,18 @@
 		<p id="result"></p>
 		<script>
 			function convert() {
-				let amount = +document.getElementById("number").value;
+				let amountNumber = +document.getElementById("number").value;
 				let fromCurrency = document.getElementById("From").value;
 				let toCurrency = document.getElementById("To").value;
 
 				if (fromCurrency == "VND" && toCurrency == "USD") {
-					result = amount / 24.55;
+					ketQua = amountNumber / 24.55;
 				} else if (fromCurrency == "USD" && toCurrency == "VND") {
-					result = amount * 24.55;
+					ketQua = amountNumber * 24.55;
 				} else {
-					result = amount;
+					ketQua = amountNumber;
 				}
-				document.getElementById("result").innerHTML = "Result: " + result;
+				document.getElementById("result").innerHTML = "Result: " + ketQua;
 			}
 		</script>
 	</body>
