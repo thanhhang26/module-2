@@ -10,8 +10,8 @@
 		<input id="physics" placeholder="Nhập điểm môn lý" />
 		<input id="chemistry" placeholder="Nhập điểm môn hoá" />
 		<input onclick="avg()" type="button" value="Kết quả" />
-		<h1 id="avg">Tổng điểm:</h1>
-		<h1 id="total">Điểm trung bình:</h1>
+		<h1 id="total"></h1>
+		<h1 id="avg"></h1>
 		<script>
 			function avg() {
 				let math = +document.getElementById("math").value;
@@ -19,8 +19,8 @@
 				let chemistry = +document.getElementById("chemistry").value;
 				let sum = math + physics + chemistry;
 				let avg = (math + physics + chemistry) / 3;
-				document.getElementById("total").innerHTML += sum;
-				document.getElementById("avg").innerHTML += avg;
+				document.getElementById("total").innerHTML = "Tổng điểm là: " + sum;
+				document.getElementById("avg").innerHTML = "Điểm trung bình là: " + avg;
 			}
 		</script>
 	</body>
