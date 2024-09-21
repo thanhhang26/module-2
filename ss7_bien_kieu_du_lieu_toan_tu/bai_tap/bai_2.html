@@ -96,13 +96,13 @@
 				let toCurrency = document.getElementById("To").value;
 
 				if (fromCurrency == "VND" && toCurrency == "USD") {
-					ketQua = amountNumber / 24.55;
+					result = amountNumber / 24.55;
 				} else if (fromCurrency == "USD" && toCurrency == "VND") {
-					ketQua = amountNumber * 24.55;
+					result = amountNumber * 24.55;
 				} else {
-					ketQua = amountNumber;
+					result = amountNumber;
 				}
-				document.getElementById("result").innerHTML = "Result: " + ketQua;
+				document.getElementById("result").innerHTML = "Result: " + result;
 			}
 		</script>
 	</body>
