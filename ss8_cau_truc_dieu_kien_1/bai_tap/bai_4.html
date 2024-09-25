@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 4</title>
+	</head>
+	<body>
+		<input id="number1" placeholder="Nhập số nguyên a" />
+		<input id="number2" placeholder="Nhập số nguyên b" />
+		<input id="number3" placeholder="Nhập số nguyên c" />
+		<input onclick="kiemTra()" type="button" value="Kiểm tra" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let numberA = +document.getElementById("number1").value;
+				let numberB = +document.getElementById("number2").value;
+				let numberC = +document.getElementById("number3").value;
+				if (numberA >= numberB && numberA >= numberC) {
+					document.getElementById("result").innerText = `Số ${numberA} là số lớn nhất`;
+				} else if (numberB >= numberC) {
+					document.getElementById("result").innerText = `Số ${numberB} là số lớn nhất`;
+				} else {
+					document.getElementById("result").innerText = `Số ${numberC} là số lớn nhất`;
+				}
+			}
+		</script>
+	</body>
+</html>

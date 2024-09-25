@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 6</title>
+		<style>
+			table {
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Quy định hoa hồng theo doanh số bán hàng</h3>
+		<table border="1">
+			<tr>
+				<th>Doanh số bán hàng</th>
+				<th>Hoa hồng</th>
+			</tr>
+			<tr>
+				<td>Từ 0 đến 10.000.000</td>
+				<td>5%</td>
+			</tr>
+			<tr>
+				<td>Từ 10.000.000 đến 20.000.000</td>
+				<td>10%</td>
+			</tr>
+			<tr>
+				<td>Từ 20.000.000 đến 30.000.000</td>
+				<td>15%</td>
+			</tr>
+			<tr>
+				<td>Từ 30.000.000 trở lên</td>
+				<td>20%</td>
+			</tr>
+		</table>
+		<br />
+		<input id="check" placeholder="Nhập số doanh thu" />
+		<input onclick="kiemTra()" type="button" value="Kiểm tra" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let doanhThu = +document.getElementById("check").value;
+				if (doanhThu < 10000000) {
+					let hoaHong = doanhThu * 0.05;
+					document.getElementById("result").innerText = `Số hoa hồng nhận được là: ${hoaHong}`;
+				} else if (doanhThu < 20000000) {
+					let hoaHong = doanhThu * 0.1;
+					document.getElementById("result").innerText = `Số hoa hồng nhận được là:  ${hoaHong}`;
+				} else if (doanhThu < 30000000) {
+					let hoaHong = doanhThu * 0.15;
+					document.getElementById("result").innerText = `Số hoa hồng nhận được là:  ${hoaHong}`;
+				} else {
+					let hoaHong = doanhThu * 0.2;
+					document.getElementById("result").innerText = `Số hoa hồng nhận được là:  ${hoaHong}`;
+				}
+			}
+		</script>
+	</body>
+</html>

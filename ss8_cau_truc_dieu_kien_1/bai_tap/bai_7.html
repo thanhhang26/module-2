@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 7</title>
+	</head>
+	<body>
+		<h3>BẢNG CƯỚC PHÍ THUÊ BAO</h3>
+		<h4>Phí thuê bao bắt buộc: 25.000 VND</h4>
+		<ul>
+			<li>600 đồng/phút: 50 phút đầu tiên</li>
+			<li>400 đồng/phút: 150 phút tiếp theo</li>
+			<li>200 đồng/phút: từ phút thứ 200</li>
+		</ul>
+		<br />
+		<input id="minutes" placeholder="Nhập số phút gọi" />
+		<button onclick="check()">Tính cước</button>
+		<p id="result">Cước: 0</p>
+
+		<script>
+			function check() {
+				let minutes = +document.getElementById("minutes").value;
+				const phiBatBuoc = 25000;
+
+				if (minutes <= 50) {
+					tongPhi = phiBatBuoc + minutes * 600;
+				} else if (51 < minutes < 200) {
+					tongPhi = phiBatBuoc + 50 * 600 + (minutes - 50) * 400;
+				} else {
+					tongPhi = phiBatBuoc + 50 * 600 + 150 * 400 + (minutes - 200) * 200;
+				}
+
+				document.getElementById("result").innerHTML = `Cước: <b>${tongPhi} VNĐ</b>`;
+			}
+		</script>
+	</body>
+</html>

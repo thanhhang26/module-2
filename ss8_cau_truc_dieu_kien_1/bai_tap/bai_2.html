@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 2</title>
+	</head>
+	<body>
+		<h1>Kiểm tra điều kiện độ tuổi vào lớp 10</h1>
+		<input id="tuoi" placeholder="Nhập tuổi" />
+		<input onclick="kiemTra()" type="button" value="Kiểm tra" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let soTuoi = +document.getElementById("tuoi").value;
+				if (soTuoi == 15) {
+					document.getElementById("result").innerText = `Học sinh đủ tuổi vào lớp 10`;
+				} else if (soTuoi < 15) {
+					//else if (0 < soTuoi < 15) không hoạt động như mong muốn trong JavaScript vì nó không kiểm tra phạm vi một cách chính xác.
+					document.getElementById("result").innerText = `Học sinh không đủ tuổi vào lớp 10`;
+				} else if (soTuoi <= 0) {
+					document.getElementById("result").innerText = `Số tuổi không hợp lệ`;
+				} else {
+					document.getElementById("result").innerText = `Học sinh quá tuổi vào lớp 10`;
+				}
+			}
+		</script>
+	</body>
+</html>

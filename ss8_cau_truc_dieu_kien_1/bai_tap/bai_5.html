@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 5</title>
+	</head>
+	<body>
+		<input id="kiem_tra" placeholder="Điểm bài kiểm tra" />
+		<input id="giua_ky" placeholder="Điểm bài giữa kỳ" />
+		<input id="cuoi_ky" placeholder="Điểm bài cuối kỳ" />
+		<input onclick="kiemTra()" id="check" type="button" value="Kiểm tra" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let kiemTra = +document.getElementById("kiem_tra").value;
+				let giuaKy = +document.getElementById("giua_ky").value;
+				let cuoiKy = +document.getElementById("cuoi_ky").value;
+				let result = (kiemTra + giuaKy + cuoiKy) / 3;
+				if (result >= 9) {
+					document.getElementById("result").innerText = `Điểm trung bình là : ${result}. Xếp loại Giỏi.`;
+				} else if (result >= 7) {
+					document.getElementById("result").innerText = `Điểm trung bình là : ${result}. Xếp loại Khá.`;
+				} else if (result >= 6) {
+					document.getElementById("result").innerText = `Điểm trung bình là : ${result}. Xếp loại Trung Bình`;
+				} else {
+					document.getElementById("result").innerText = `Điểm trung bình là : ${result}. Xếp loại Yếu.`;
+				}
+			}
+		</script>
+	</body>
+</html>

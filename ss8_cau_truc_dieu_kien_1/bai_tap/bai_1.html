@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 1</title>
+	</head>
+	<body>
+		<h1>Kiểm tra a có chia hết cho b</h1>
+		<input type="number" id="number1" placeholder="Nhập số a" />
+		<input type="number" id="number2" placeholder="Nhập số b" />
+		<input onclick="kiemTra()" type="button" value="Kiểm tra" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let numberA = +document.getElementById("number1").value;
+				let numberB = +document.getElementById("number2").value;
+				if (numberB == 0) {
+					document.getElementById("result").innerText = "Số b không hợp lệ";
+				} else if (numberA % numberB == 0) {
+					document.getElementById("result").innerText = `Số ${numberA} chia hết cho số ${numberB}`;
+				} else {
+					document.getElementById("result").innerText = `Số ${numberA} không hết cho số ${numberB}`;
+				}
+			}
+		</script>
+	</body>
+</html>
