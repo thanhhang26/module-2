@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td colspan="4"><input id="window" disabled /></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="nhap(this.value)" value="1" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="2" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="3" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="+" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="nhap(this.value)" value="4" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="5" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="6" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="-" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="nhap(this.value)" value="7" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="8" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="9" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="x" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="nhap(this.value)" value="C" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="0" /></td>
+				<td><input type="button" onclick="equal()" value="=" /></td>
+				<td><input type="button" onclick="nhap(this.value)" value="/" /></td>
+			</tr>
+		</table>
+		<script>
+			function nhap(kyTu) {
+				if (kyTu === "C") {
+					document.getElementById("window").value = "";
+				} else {
+					let input = document.getElementById("window").value;
+					document.getElementById("window").value += kyTu;
+				}
+
+				if (kyTu === "x") {
+					document.getElementById("window").value;
+				}
+			}
+			function equal() {
+				let result = document.getElementById("window").value;
+				let ketqua = result.replace("x", "*");
+				let tinh = eval(ketqua);
+				document.getElementById("window").value = tinh;
+			}
+		</script>
+	</body>
+</html>
