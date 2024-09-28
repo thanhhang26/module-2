@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Thu nhap thue ca nhan</title>
+	</head>
+	<body>
+		<h1>Chương trình tính thuế thu nhập cá nhân</h1>
+		<table border="1">
+			<tr>
+				<th>Bậc</th>
+				<th>Phần thu nhập tính thuế (triệu đồng/ tháng)</th>
+				<th>Thuế suất 9(%)</th>
+			</tr>
+			<tr>
+				<td>Bậc 1</td>
+				<td>Đến 5 triệu</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>Bậc 2</td>
+				<td>Từ 5 triệu đến 10 triệu</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>Bậc 3</td>
+				<td>Từ 10 triệu đến 18 triệu</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>Bậc 4</td>
+				<td>Từ 18 triệu đến 32 triệu</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>Bậc 5</td>
+				<td>Từ 32 triệu đến 52 triệu</td>
+				<td>25</td>
+			</tr>
+			<tr>
+				<td>Bậc 6</td>
+				<td>Từ 52 triệu đến 80 triệu</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>Bậc 7</td>
+				<td>Trên 80 triệu</td>
+				<td>35</td>
+			</tr>
+		</table>
+		<br />
+		<input id="thuNhap" placeholder="Nhập thu nhập tính thuế" />
+		<input type="button" value="Tính thuế" onclick="tinhThue()" />
+		<p id="ketQua"></p>
+		<script>
+			function tinhThue() {
+				let nhapThue = +document.getElementById("thuNhap").value;
+				if (nhapThue <= 5) {
+					thuNhap = nhapThue * 0.05;
+				} else if (nhapThue <= 10) {
+					thuNhap = nhapThue * 0.05 + (nhapThue - 5) * 0.1;
+				} else if (nhapThue <= 18) {
+					thuNhap = nhapThue * 0.05 + nhapThue * 0.1 + (nhapThue - 10) * 0.15; //thuế cho 10 triệu đầu tiên và phần còn lại (từ 10 triệu đến mức nhập vào) với 15%.
+				} else if (nhapThue <= 32) {
+					thuNhap = nhapThue * 0.05 + nhapThue * 0.1 + nhapThue * 0.15 + (nhapThue - 18) * 0.2; //Tính thuế cho 18 triệu đầu tiên và phần còn lại với 20%.
+				} else if (nhapThue <= 52) {
+					thuNhap = nhapThue * 0.05 + nhapThue * 0.1 + nhapThue * 0.15 + nhapThue * 0.2 + (nhapThue - 32) * 0.3;
+				} else {
+					thuNhap = nhapThue * 0.05 + nhapThue * 0.1 + nhapThue * 0.15 + nhapThue * 0.2 + nhapThue * 0.3 + (nhapThue - 52) * 0.35;
+				}
+				document.getElementById("ketQua").innerText = `Thu thập thuế cá nhân theo tháng ${thuNhap}`;
+			}
+		</script>
+	</body>
+</html>

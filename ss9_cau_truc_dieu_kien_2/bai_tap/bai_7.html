@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Giai phuong trinh bac 2</title>
+	</head>
+	<body>
+		<h1>Giải phương trình bậc 2: ax² + bx + c = 0</h1>
+		<input id="number1" placeholder="Nhập số a" />
+		<input id="number2" placeholder="Nhập số b" />
+		<input id="number3" placeholder="Nhập số c" />
+		<input onclick="dapAn()" type="button" value="Kết quả" />
+		<p id="result"></p>
+		<script>
+			function dapAn() {
+				let soA = +document.getElementById("number1").value;
+				let soB = +document.getElementById("number2").value;
+				let soC = +document.getElementById("number3").value;
+				let delTa = soB * soB - 4 * soA * soC;
+				if (soA == 0) {
+					if (soB == 0) {
+						document.getElementById("result").innerText = `Phương trình vô số nghiệm`;
+					} else {
+						let nghiemX = -soC / soB;
+						document.getElementById("result").innerText = `Phương trình có 1 nghiệm duy nhất: S = {${nghiemX}}`;
+					}
+				} else {
+					if (delTa > 0) {
+						let nghiemX1 = (-soB + Math.sqrt(delTa)) / (2 * soA);
+						let nghiemX2 = (-soB - Math.sqrt(delTa)) / (2 * soA);
+						// Math.sqrt(number): căn bậc 2 của number
+						document.getElementById("result").innerText = `Phương trình có 2 nghiệm: x1 = ${nghiemX1}, x2 = ${nghiemX2}`;
+					} else if (delTa === 0) {
+						let result = (-soB / 2) * soA;
+						document.getElementById("result").innerText = `Phương trình có nghiệm kép: x1 = x2 = ${result} `;
+					} else {
+						document.getElementById("result").innerText = `Phương trình vô nghiệm `;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

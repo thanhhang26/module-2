@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tính giá điện</title>
+	</head>
+	<body>
+		<h1>Chương trình tính giá điện</h1>
+		<table border="1">
+			<tr>
+				<th>Bậc</th>
+				<th>Giá bán lẻ điện sinh hoạt</th>
+				<th>Giá bán điện (đồng/kWh)</th>
+			</tr>
+			<tr>
+				<td>Bậc 1</td>
+				<td>Từ 0 - 50 kWh</td>
+				<td>1.806</td>
+			</tr>
+			<tr>
+				<td>Bậc 2</td>
+				<td>Từ 51 - 100 kWh</td>
+				<td>1.866</td>
+			</tr>
+			<tr>
+				<td>Bậc 3</td>
+				<td>Từ 101 - 200 kWh</td>
+				<td>2.167</td>
+			</tr>
+			<tr>
+				<td>Bậc 4</td>
+				<td>Từ 201 - 300 kWh</td>
+				<td>2.729</td>
+			</tr>
+			<tr>
+				<td>Bậc 5</td>
+				<td>Từ 301 - 400 kWh</td>
+				<td>3.050</td>
+			</tr>
+			<tr>
+				<td>Bậc 6</td>
+				<td>Từ 401 trở lên kWh</td>
+				<td>3.151</td>
+			</tr>
+		</table>
+		<br />
+		<input id="kwh" placeholder="Nhập số kWh tiêu thụ" />
+		<input onclick="tinhTienDien()" type="button" value="Tính tiền điện" />
+		<p id="result"></p>
+		<script>
+			// Hàm tính tổng tiền điện dựa trên số kWh tiêu thụ
+			function tinhTienDien() {
+				let kWh = +document.getElementById("kwh").value;
+				if (kWh <= 50) {
+					tongTien = kWh * 1806;
+				} else if (kWh <= 100) {
+					tongTien = 50 * 1806 + (kWh - 50) * 1866; // Nếu kWh nằm giữa 51 và 100, tính tiền cho 50 kWh đầu tiên theo bậc 1, và phần kWh còn lại theo bậc 2.
+				} else if (kWh <= 200) {
+					tongTien = 50 * 1806 + 50 * 1866 + (kWh - 100) * 2167; //Nếu kWh nằm giữa 101 và 200, tính tiền cho 50 kWh đầu theo bậc 1, 50 kWh tiếp theo theo bậc 2, và phần còn lại theo bậc 3.
+				} else if (kWh <= 300) {
+					tongTien = 50 * 1806 + 50 * 1866 + 100 * 2167 + (kWh - 200) * 2729; //tương tự
+				} else if (kWh <= 400) {
+					tongTien = 50 * 1806 + 50 * 1866 + 100 * 2167 + 100 * 2729 + (kWh - 300) * 3050;
+				} else {
+					tongTien = 50 * 1806 + 50 * 1866 + 100 * 2167 + 100 * 2729 + 100 * 3050 + (kWh - 400) * 3151;
+				}
+				document.getElementById("result").innerText = `Tổng tiền điện là: ${tongTien} VND`;
+			}
+		</script>
+	</body>
+</html>
