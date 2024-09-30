@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 6</title>
+	</head>
+	<body>
+		<script>
+			let tuNhien = 0; //Dùng để đếm số lượng các số tự nhiên chia hết cho 7. Khi đạt đến 30, vòng lặp dừng lại.
+			let number = 0; // Là số tự nhiên hiện tại, bắt đầu từ 0 và tăng dần.
+			let sum = number; //Được sử dụng để lưu tổng của các số chia hết cho 7.
+			while (tuNhien < 30) {
+				if (number % 7 == 0) {
+					tuNhien++; // Tăng số lượng số chia hết cho 7
+					sum += number; // Cộng số đó vào tổng
+				}
+				number++; // Tăng số tự nhiên hiện tại lên 1
+			}
+			document.write(`Tổng 30 số chia hết cho 7: ${sum} `);
+		</script>
+	</body>
+</html>

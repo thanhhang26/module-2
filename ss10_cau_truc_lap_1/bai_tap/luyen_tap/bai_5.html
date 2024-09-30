@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 5</title>
+	</head>
+	<body>
+		<script>
+			let number1 = 0;
+			let number2 = 1;
+			let sum = number1; //Khởi tạo phép tính với số đầu tiên
+			for (let i = 0; i < 20; i++) {
+				sum += number2; // Cộng số thứ hai vào tổng
+				nextNumber = number1 + number2; // Tính số Fibonacci tiếp theo
+				number1 = number2; // Cập nhật number1
+				number2 = nextNumber; // Cập nhật number2
+			}
+			console.log("Tổng của 20 số đầu tiên trong dãy Fibonacci là: " + sum);
+			alert("Tổng của 20 số đầu tiên trong dãy Fibonacci là: " + sum);
+		</script>
+	</body>
+</html>

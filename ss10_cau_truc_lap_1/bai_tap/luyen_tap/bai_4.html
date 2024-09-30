@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let number1 = 0;
+			let number2 = 1;
+			let sum;
+			while (true) {
+				//Câu lệnh while (true) tạo ra một vòng lặp không bao giờ kết thúc (vô hạn) vì điều kiện kiểm tra luôn đúng. Từ khóa true đảm bảo rằng vòng lặp luôn tiếp tục chạy cho đến khi nó gặp một lệnh dừng
+				let sum = number1 + number2;
+				number1 = number2;
+				number2 = sum;
+				if (sum % 5 == 0) {
+					alert(`Số đầu tiên trong dãy fibonacci chia hết cho 5 là ${sum}`);
+					break;
+				}
+			}
+		</script>
+	</body>
+</html>

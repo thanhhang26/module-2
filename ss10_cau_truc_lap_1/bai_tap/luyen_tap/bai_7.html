@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 7</title>
+	</head>
+	<body>
+		<script>
+			for (let i = 1; i <= 100; i++) {
+				let ketQua = ""; // Biến để lưu kết quả
+				if (i % 3 === 0) {
+					ketQua += "Fizz"; // Thêm "Fizz" nếu chia hết cho 3
+				}
+				if (i % 5 === 0) {
+					ketQua += "Buzz"; // Thêm "Buzz" nếu chia hết cho 5
+				}
+				// Nếu không có "Fizz" hoặc "Buzz", in ra số. Điều này đảm bảo nếu chuỗi ketQua vẫn rỗng (nghĩa là i không chia hết cho 3 hoặc 5), nó sẽ in ra giá trị của i.
+				if (ketQua === "") {
+					ketQua = i;
+				}
+				document.write(ketQua + "<br>"); // In ra kết quả
+			}
+		</script>
+	</body>
+</html>
