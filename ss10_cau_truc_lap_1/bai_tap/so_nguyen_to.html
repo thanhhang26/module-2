@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Số nguyên tố</title>
+	</head>
+	<body>
+		<h1>Danh sách 20 số nguyên tố đầu tiên</h1>
+		<script>
+			// Hàm isPrime(num) để kiểm tra số nguyên tố
+			function isPrime(number) {
+				if (number < 2) {
+					// Số nhỏ hơn 2 không phải số nguyên tố
+					return false;
+				}
+				for (let i = 2; i <= Math.sqrt(number); i++) {
+					if (number % i === 0) return false; // Nếu chia hết, không phải số nguyên tố
+				}
+				return true; // Nếu không chia hết, là số nguyên tố
+			}
+			let primeNumber = 0;
+			let number = 2;
+			let primes = ""; // Chuỗi chứa các số nguyên tố để hiển thị
+			while (primeNumber < 20) {
+				if (isPrime(number)) {
+					//Kiểm tra xem number có phải là số nguyên tố không bằng cách gọi hàm isPrime().
+					primes += number + " "; // Thêm số nguyên tố vào chuỗi
+					primeNumber++; //Tăng số lượng số nguyên tố
+				}
+				number++; // Kiểm tra số tiếp theo
+			}
+			document.write(primes);
+		</script>
+	</body>
+</html>
