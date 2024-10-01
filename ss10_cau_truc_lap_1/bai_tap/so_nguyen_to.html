@@ -13,13 +13,17 @@
 				if (number < 2) {
 					// Số nhỏ hơn 2 không phải số nguyên tố
 					return false;
-				}
-				for (let i = 2; i <= Math.sqrt(number); i++) {
-					if (number % i === 0) return false; // Nếu chia hết, không phải số nguyên tố
+				} else {
+					for (let i = 2; i <= Math.sqrt(number); i++) {
+						if (number % i === 0) {
+							return false; // Nếu chia hết, không phải số nguyên tố
+						}
+					}
 				}
 				return true; // Nếu không chia hết, là số nguyên tố
 			}
-			let primeNumber = 0;
+
+			let primeNumber = 0; // Đếm số lượng nguyên tố
 			let number = 2;
 			let primes = ""; // Chuỗi chứa các số nguyên tố để hiển thị
 			while (primeNumber < 20) {
