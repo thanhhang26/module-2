@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<script>
+			let soTien = parseFloat(prompt("Nhập số tiền ban đầu"));
+			let laiXuat = parseFloat(prompt("Nhập lãi xuất hàng tháng"));
+			let soThang = parseFloat(prompt("Nhập số tháng cho vay"));
+			for (i = 1; i <= soThang; i++) {
+				soTien = soTien * Math.pow(1 + laiXuat, soThang);
+			}
+			alert(`Số tiền cuối cùng sau khi tính lãi là: ${soTien.toFixed(2)} VND`);
+		</script>
+	</body>
+</html>

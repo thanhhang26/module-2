@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2</title>
+	</head>
+	<body>
+		<script>
+			function factorial(number) {
+				if (number === 0) {
+					return 1;
+				} else {
+					return number * factorial(number - 1);
+				}
+			}
+
+			while (true) {
+				let number = +prompt("Nhập số nguyên dương");
+				if (number >= 0) {
+					result = factorial(number);
+					alert(`Giá trị ${number} là ${result}`);
+					break;
+				} else {
+					number = +prompt("Số nhập không thoả mãn, hãy nhập lại");
+				}
+			}
+		</script>
+	</body>
+</html>
