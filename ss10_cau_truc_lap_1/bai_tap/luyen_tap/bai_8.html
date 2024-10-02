@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 8</title>
+	</head>
+	<body>
+		<input type="button" onclick="choiGame()" value="Bắt đầu" />
+		<script>
+			function choiGame() {
+				let ngauNhien = +prompt("Nhập số ngẫu nhiên trong khoảng người dùng chọn");
+				let nhapSo = +prompt("Nhập số cần đoán");
+				let randomNumber = Math.ceil(Math.random() * ngauNhien); //random giữa 0 và 1 thì sử dụng Math.random() function
+				let count = 1; //gọi để giới hạn số lần nhập
+				while (true) {
+					if (nhapSo < randomNumber) {
+						nhapSo = +prompt("Số bạn nhập bé hơn kết quả cần dự đoán. Hãy nhập lại");
+					} else if (nhapSo > randomNumber) {
+						nhapSo = +prompt("Số bạn nhập lớn hơn kết quả cần dự đoán. Hãy nhập lại");
+					} else {
+						alert("Xin chúc mừng bạn đã đoán đúng");
+						break;
+					}
+					if (count === 3) {
+						alert("Bạn đã hết số lần nhập");
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
