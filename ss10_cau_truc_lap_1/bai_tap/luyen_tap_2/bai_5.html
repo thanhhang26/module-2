@@ -7,13 +7,13 @@
 	</head>
 	<body>
 		<script>
-			let soTien = parseFloat(prompt("Nhập số tiền ban đầu"));
-			let laiXuat = parseFloat(prompt("Nhập lãi xuất hàng tháng"));
-			let soThang = parseFloat(prompt("Nhập số tháng cho vay"));
-			for (i = 1; i <= soThang; i++) {
+			while (true) {
+				let soTien = parseFloat(prompt("Nhập số tiền ban đầu"));
+				let laiXuat = parseFloat(prompt("Nhập lãi xuất hàng tháng"));
+				let soThang = parseFloat(prompt("Nhập số tháng cho vay"));
 				soTien = soTien * Math.pow(1 + laiXuat, soThang);
+				alert(`Số tiền cuối cùng sau khi tính lãi là: ${soTien.toFixed(2)} VND`);
 			}
-			alert(`Số tiền cuối cùng sau khi tính lãi là: ${soTien.toFixed(2)} VND`);
 		</script>
 	</body>
 </html>
