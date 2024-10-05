@@ -15,11 +15,12 @@
 				let tiengAnh = new Array("milk", "apple");
 				let tiengViet = new Array("sữa", "quả táo");
 				let tuNhap = document.getElementById("word").value;
-				let result = "Không tìm thấy từ này trong từ điển.";
+				let result = "";
 				for (i = 0; i < tiengAnh.length; i++) {
 					if (tuNhap === tiengAnh[i]) {
 						document.getElementById("result").innerText = `${tiengViet[i]}`;
-						break;
+					} else {
+						document.getElementById("result").innerText = "Không tìm thấy từ này trong từ điển.";
 					}
 				}
 			}
