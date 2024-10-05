@@ -19,6 +19,7 @@
 				for (i = 0; i < tiengAnh.length; i++) {
 					if (tuNhap === tiengAnh[i]) {
 						document.getElementById("result").innerText = `${tiengViet[i]}`;
+						break;
 					} else {
 						document.getElementById("result").innerText = "Không tìm thấy từ này trong từ điển.";
 					}
