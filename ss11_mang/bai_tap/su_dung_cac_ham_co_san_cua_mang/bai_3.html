@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+	</head>
+	<body>
+		<script>
+			let strings = prompt("Nhập chữ");
+			let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			let lower = "abcdefghijklmnopqrstuvwxyz";
+
+			let result = [];
+			for (let i = 0; i < strings.length; i++) {
+				if (upper.indexOf(strings[i]) !== -1) {
+					//Nếu giá trị trả về khác -1, điều đó có nghĩa là ký tự đó là chữ hoa.
+					result.push(strings[i].toLowerCase());
+				} else if (lower.indexOf(strings[i]) !== -1) {
+					result.push(strings[i].toUpperCase());
+				} else {
+					result.push(strings[i]);
+				}
+			}
+			alert(result.join(""));
+		</script>
+	</body>
+</html>

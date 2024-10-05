@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Từ điển</title>
+	</head>
+	<body>
+		<label>Nhập từ:</label>
+		<input id="word" placeholder="Nhập từ" />
+		<input onclick="kiemTra()" type="button" , value="Dịch" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let tiengAnh = new Array("milk", "apple");
+				let tiengViet = new Array("sữa", "quả táo");
+				let tuNhap = document.getElementById("word").value;
+				let result = "Không tìm thấy từ này trong từ điển.";
+				for (i = 0; i < tiengAnh.length; i++) {
+					if (tuNhap === tiengAnh[i]) {
+						document.getElementById("result").innerText = `${tiengViet[i]}`;
+						break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

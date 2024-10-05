@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<script>
+			let nhapSo = prompt("Nhập số nguyên âm");
+			let count = 0;
+			let numbers = nhapSo.split(/[^-0-9]+/); // Tách chuỗi bằng ký tự không phải số hoặc dấu âm (biểu thức chính quy để tách chuỗi)
+			for (i = 0; i < numbers.length; i++) {
+				if (parseInt(numbers[i]) < 0) {
+					count++; // Tăng biến đếm
+				}
+			}
+			alert(`${count} số nguyên âm trong chuỗi`);
+		</script>
+	</body>
+</html>

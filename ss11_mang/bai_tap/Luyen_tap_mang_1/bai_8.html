@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 8</title>
+	</head>
+	<body>
+		<script>
+			let soNguyen = [3, 7, 1, 9, 4];
+			let numbers = parseInt(prompt("Nhập số nguyên"));
+			soNguyen.push(numbers);
+			// Sắp xếp mảng theo thứ tự tăng dần
+			soNguyen.sort(function (x, y) {
+				return x - y;
+			});
+			alert(`Mảng sau khi được sắp xếp: ${soNguyen.join(", ")}`);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2</title>
+	</head>
+	<body>
+		<script>
+			let numbers = +prompt("Nhập số");
+			let soKhac = numbers.toString();
+			let result = [soKhac[0]];
+			for (i = 1; i < soKhac.length; i++) {
+				if (soKhac[i - 1] % 2 === 0 && soKhac[i] % 2 === 0) {
+					result.push("-" + soKhac[i]);
+				} else {
+					result.push(soKhac[i]);
+				}
+			}
+			alert(result.join(""));
+		</script>
+	</body>
+</html>

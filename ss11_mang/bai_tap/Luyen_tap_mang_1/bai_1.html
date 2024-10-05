@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 1</title>
+	</head>
+	<body>
+		<script>
+			let nhapSo = +prompt("Hãy nhập số nguyên");
+			let soNguyen = [1, 2, 3, 8, 9, 10, 12, 15, 16, 30, 31];
+			let result = [];
+			for (i = 0; i < soNguyen.length; i++) {
+				if (soNguyen[i] >= 10) {
+					result.push(soNguyen[i]);
+				}
+			}
+			alert(`Các số lớn hơn hoặc bằng 10 là: ${result.join(", ")}`);
+		</script>
+	</body>
+</html>

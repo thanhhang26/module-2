@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2</title>
+	</head>
+	<body>
+		<script>
+			// Nhập số nguyên từ người dùng
+			let nhapSo = +prompt("Hãy nhập số nguyên");
+			let soNguyen = [1, 2, 3, 8, 9, 45, 12, 15, 16, 30, 31];
+			let max = soNguyen[0]; // Khởi tạo giá trị lớn nhất
+			let indices = []; // Mảng lưu trữ vị trí của giá trị lớn nhất
+
+			// Duyệt qua mảng để tìm giá trị lớn nhất
+			for (let i = 0; i < soNguyen.length; i++) {
+				if (soNguyen[i] > max) {
+					max = soNguyen[i]; // Cập nhật giá trị lớn nhất
+					indices = [i]; // Cập nhật lại vị trí
+				} else if (soNguyen[i] === max) {
+					indices.push(i); // Thêm vị trí vào mảng nếu bằng giá trị lớn nhất
+				}
+			}
+
+			// Hiển thị kết quả
+			alert(`Giá trị lớn nhất là: ${max} và vị trí của nó là: ${indices.join(", ")}`);
+		</script>
+	</body>
+</html>
