@@ -8,10 +8,16 @@
 	<body>
 		<script>
 			// Nhập số nguyên từ người dùng
-			let nhapSo = +prompt("Hãy nhập số nguyên");
-			let soNguyen = [1, 2, 3, 8, 9, 45, 12, 15, 16, 30, 31];
-			let max = soNguyen[0]; // Khởi tạo giá trị lớn nhất
+			let nhapSo = +prompt("Hãy nhập độ dài của mảng");
+			let soNguyen = [];
+			let max = ""; // Khởi tạo giá trị lớn nhất
 			let indices = []; // Mảng lưu trữ vị trí của giá trị lớn nhất
+
+			for (let i = 0; i < nhapSo; i++) {
+				let element = +prompt("Nhập phần tử thứ " + i);
+				soNguyen.push(element);
+			}
+			alert(`Mảng vừa nhập là ${soNguyen}`);
 
 			// Duyệt qua mảng để tìm giá trị lớn nhất
 			for (let i = 0; i < soNguyen.length; i++) {
@@ -22,8 +28,6 @@
 					indices.push(i); // Thêm vị trí vào mảng nếu bằng giá trị lớn nhất
 				}
 			}
-
-			// Hiển thị kết quả
 			alert(`Giá trị lớn nhất là: ${max} và vị trí của nó là: ${indices.join(", ")}`);
 		</script>
 	</body>

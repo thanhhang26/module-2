@@ -7,10 +7,17 @@
 	</head>
 	<body>
 		<script>
-			let nhapSo = prompt("Nhập số nguyên");
-			let soKhac = nhapSo.toString(",");
+			let nhapSo = +prompt("Nhập chiều dài của mảng");
+			let soKhac = [];
 			let result = "";
-			for (i = soKhac.length - 1; i >= 0; i--) {
+
+			for (let i = 0; i < nhapSo; i++) {
+				let element = +prompt("Nhập phần tử thứ " + i);
+				soKhac.push(element);
+			}
+			alert(`Mảng vừa nhập là: ${soKhac}`);
+
+			for (let i = soKhac.length - 1; i >= 0; i--) {
 				// Hiển thị từng chữ số theo thứ tự đảo ngược
 				result = result + soKhac[i];
 			}

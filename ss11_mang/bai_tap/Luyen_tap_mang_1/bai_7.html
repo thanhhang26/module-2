@@ -7,28 +7,29 @@
 	</head>
 	<body>
 		<script>
-			let numbers = parseInt(prompt("Nhập số nguyên"));
-			let soNguyen = [1, 6, 8, 10, 20, 25, 28, 31, 36, 40];
-			// Biến flag để kiểm tra xem V có thuộc mảng hay không
-			let found = false;
-			for (i = 0; i < soNguyen.length; i++) {
-				if (numbers === soNguyen[i]) {
-					found = true;
-					// Dịch chuyển các phần tử bên phải V sang trái
+			let numbers = +prompt("Nhập chiều dài của mảng");
+			let soNguyen = [];
+			let result = "";
+
+			for (let i = 0; i < numbers; i++) {
+				let element = +prompt("Nhập phần tử thứ " + i);
+				soNguyen.push(element);
+			}
+			alert(`Mảng vừa nhập là: ${soNguyen}`);
+
+			let v = +prompt("nhập số v");
+			for (let i = 0; i < soNguyen.length; i++) {
+				if (v == soNguyen[i]) {
+					// dịch chuyển mảng tại vị trí i, duyet tới vị trí áp chót
 					for (let j = i; j < soNguyen.length - 1; j++) {
 						soNguyen[j] = soNguyen[j + 1];
 					}
-
-					// Gán 0 cho phần tử cuối cùng
+					i--;
+					// gán giá trị cuối bằng 0;
 					soNguyen[soNguyen.length - 1] = 0;
-					break; // Kết thúc vòng lặp khi đã xóa V
 				}
 			}
-			if (found) {
-				alert(`Mảng sau khi xóa ${numbers}: ${soNguyen.join(", ")}`);
-			} else {
-				alert(`Số ${numbers} không thuộc mảng.`);
-			}
+			alert(soNguyen);
 		</script>
 	</body>
 </html>

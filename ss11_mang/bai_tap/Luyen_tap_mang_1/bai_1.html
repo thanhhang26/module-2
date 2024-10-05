@@ -7,10 +7,16 @@
 	</head>
 	<body>
 		<script>
-			let nhapSo = +prompt("Hãy nhập số nguyên");
-			let soNguyen = [1, 2, 3, 8, 9, 10, 12, 15, 16, 30, 31];
+			let nhapSo = +prompt("Nhập chiều dài của mảng");
+			let soNguyen = [];
 			let result = [];
-			for (i = 0; i < soNguyen.length; i++) {
+			for (let i = 0; i < nhapSo; i++) {
+				let element = +prompt("Nhập số nguyên thứ " + i);
+				soNguyen.push(element);
+			}
+			alert(`Mảng vừa nhập là ${soNguyen}`);
+
+			for (let i = 0; i < soNguyen.length; i++) {
 				if (soNguyen[i] >= 10) {
 					result.push(soNguyen[i]);
 				}

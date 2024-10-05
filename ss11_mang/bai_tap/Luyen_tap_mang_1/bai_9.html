@@ -7,19 +7,16 @@
 	</head>
 	<body>
 		<script>
-			let a = [];
-			let b = [];
-			let c = [];
-			for (i = 0; i < 10; i++) {
-				let input = prompt(`Nhập 10 phần tử ${i + 1} của mảng a:`);
-				a.push(parseInt(input));
+			let arr1 = [1, 2, 3];
+			let arr2 = [11, 22, 33];
+			let arr = [];
+			for (let i = 0; i < arr1.length; i++) {
+				arr.push(arr1[i]);
 			}
-			for (i = 0; i < 10; i++) {
-				let input = prompt(`Nhập 10 phần tử ${i + 1} của mảng b:`);
-				b.push(parseInt(input));
+			for (let i = 0; i < arr2.length; i++) {
+				arr.push(arr2[i]);
 			}
-			c = a.concat(b);
-			alert(`Các phần tử của mảng c là: ${c}`);
+			alert(arr);
 		</script>
 	</body>
 </html>

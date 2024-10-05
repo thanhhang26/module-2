@@ -7,9 +7,15 @@
 	</head>
 	<body>
 		<script>
-			let soNguyen = [3, 7, 1, 9, 4];
-			let numbers = parseInt(prompt("Nhập số nguyên"));
-			soNguyen.push(numbers);
+			let soNguyen = [];
+			let numbers = +prompt("Nhập độ dài của mảng");
+
+			for (let i = 0; i < numbers; i++) {
+				let element = +prompt("Nhập số nguyên thứ " + i);
+				soNguyen.push(element);
+			}
+			alert(`Mảng vừa nhập là ${soNguyen}`);
+
 			// Sắp xếp mảng theo thứ tự tăng dần
 			soNguyen.sort(function (x, y) {
 				return x - y;

@@ -7,16 +7,25 @@
 	</head>
 	<body>
 		<script>
-			let numbers = parseInt(prompt("Nhập số nguyên"));
-			let soNguyen = [1, 6, 8, 10, 20, 25, 28, 31, 36, 40];
-			let result = "is not in the array"; //mặc định không có trong mảng
-			for (i = 0; i < soNguyen.length; i++) {
+			let numbers = +prompt("Nhập chiều dài của mảng");
+			let soNguyen = [];
+			let result = "";
+
+			for (let i = 0; i < numbers; i++) {
+				let element = +prompt("Nhập phần tử thứ " + i);
+				soNguyen.push(element);
+			}
+			alert(`Mảng vừa nhập là: ${soNguyen}`);
+
+			let randomNumbers = +prompt("Nhập số nguyên bất kì");
+			for (let i = 0; i < soNguyen.length; i++) {
 				if (numbers === soNguyen[i]) {
 					result = "is in the array";
-					break;
+				} else {
+					result = "is not in the array";
 				}
 			}
-			alert(`${numbers} ${result}`);
+			alert(`${randomNumbers} ${result}`);
 		</script>
 	</body>
 </html>
