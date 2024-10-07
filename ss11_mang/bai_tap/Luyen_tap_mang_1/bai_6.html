@@ -19,8 +19,9 @@
 
 			let randomNumbers = +prompt("Nhập số nguyên bất kì");
 			for (let i = 0; i < soNguyen.length; i++) {
-				if (numbers === soNguyen[i]) {
+				if (randomNumbers === soNguyen[i]) {
 					result = "is in the array";
+					break;
 				} else {
 					result = "is not in the array";
 				}
