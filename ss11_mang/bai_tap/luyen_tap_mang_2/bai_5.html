@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<script>
+			let array1 = +prompt("Nhập chiều dài của mảng 1");
+			let arr1 = [];
+			let arr2 = [];
+			let result = "";
+			for (let i = 0; i < array1; i++) {
+				element1 = +prompt("Nhập arr1 thứ " + i);
+				arr1.push(element1);
+			}
+			alert("Mảng thứ nhất vừa nhập là" + arr1);
+
+			let array2 = +prompt("Nhập chiều dài của mảng 2");
+			for (let i = 0; i < array2; i++) {
+				element2 = +prompt("Nhập arr2 thứ " + i);
+				arr2.push(element2);
+			}
+			alert("Mảng thứ hai vừa nhập là" + arr2);
+
+			for (let i = 0; i < arr1.length; i++) {
+				if (arr1.length === arr2.length) {
+					result = "Hai chuỗi giống nhau";
+					break;
+				} else {
+					result = "Hai chuỗi khác nhau";
+				}
+			}
+			alert(`${result}`);
+		</script>
+	</body>
+</html>

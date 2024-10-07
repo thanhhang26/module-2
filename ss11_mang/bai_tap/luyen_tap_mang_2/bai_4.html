@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 4</title>
+	</head>
+	<body>
+		<script>
+			let kyTu = +prompt("Nhập chiều dài của mảng");
+			let strings = [];
+
+			for (let i = 0; i < kyTu; i++) {
+				let element = prompt("Nhập từ thứ " + i);
+				strings.push(element);
+			}
+			alert("Câu vừa nhập là: " + strings.join(" "));
+
+			// Tách chuỗi thành các từ dựa trên khoảng trắng
+			let words = strings.join(" ").trim().split(/\s+/); // Tách chuỗi dựa trên khoảng trắng (một hoặc nhiều khoảng trắng)
+			let wordCount = words.length;
+			alert("Số từ trong chuỗi là " + wordCount);
+		</script>
+	</body>
+</html>

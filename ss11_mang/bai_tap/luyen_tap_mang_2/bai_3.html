@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+	</head>
+	<body>
+		<script>
+			let kyTu = +prompt("Nhập chiều dài của mảng");
+			let strings = [];
+			let digitCount = 0;
+			for (let i = 0; i < kyTu; i++) {
+				let element = prompt("Nhập phần tử thứ " + i);
+				strings.push(element);
+			}
+			alert("Mảng vừa nhập là: " + strings);
+
+			for (let i = 0; i < strings.length; i++) {
+				// Kiểm tra nếu ký tự là số
+				if (!isNaN(strings[i]) && strings[i] !== " ") {
+					//Sử dụng !isNaN(array[i]) để kiểm tra xem phần tử hiện tại có phải là một số không. Ngoài ra, loại bỏ ký tự khoảng trắng bằng cách kiểm tra điều kiện array[i] !== ' '.
+					digitCount++; // Nếu là số, tăng biến đếm
+				}
+			}
+			alert(`Số lượng ký tự trong mảng là: ${digitCount}`);
+		</script>
+	</body>
+</html>
