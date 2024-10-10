@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kiểm tra số nguyen</title>
+	</head>
+	<body>
+		<script>
+			let numbers = +prompt("Nhập số nguyên tố cần check");
+			let result = ""; // Chuỗi chứa các số nguyên tố để hiển thị
+
+			if (isPrime(numbers)) {
+				result = "Là số nguyên tố";
+			} else {
+				result = "Không là số nguyên tố";
+			}
+
+			function isPrime(numbers) {
+				if (numbers < 2) {
+					return false;
+				}
+				for (i = 2; i <= Math.sqrt(numbers); i++) {
+					if (numbers % i === 0) {
+						return false;
+					}
+				}
+				return true;
+			}
+			alert(`${numbers} ${result}`);
+		</script>
+	</body>
+</html>

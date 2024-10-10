@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<p id="result"></p>
+		<script>
+			let nhapTen = prompt("Nhập tên các ngôi sao").toLowerCase();
+			let stars = [
+				["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"],
+				["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"],
+			];
+			function findStars(starName, stars) {
+				for (let i = 0; i < stars[0].length; i++) {
+					if (stars[0][i] === starName) {
+						// Trả về chòm sao tương ứng
+						return stars[1][i];
+					}
+				}
+				return null; // Không tìm thấy
+			}
+
+			let result = "";
+			let check = findStars(nhapTen, stars);
+			if (check) {
+				result = `${nhapTen} = ${check}.`;
+			} else {
+				result = "Không ra ngôi sao hợp lệ";
+			}
+			document.getElementById("result").innerText = result;
+		</script>
+	</body>
+</html>

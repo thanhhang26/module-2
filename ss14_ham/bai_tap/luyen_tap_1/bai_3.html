@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+	</head>
+	<body>
+		<script>
+			function thamSo(number1, number2) {
+				if (number1 > number2) {
+					alert("Tham số thứ nhất lớn hơn tham số thứ 2");
+				} else {
+					return number1 + number2;
+				}
+			}
+			let result = thamSo(7, 5);
+			// Nếu hàm trả về kết quả (tức là num1 <= num2), hiển thị kết quả lên màn hình
+			if (result !== undefined) {
+				document.write("Tổng của hai tham số là: " + result);
+			}
+		</script>
+	</body>
+</html>
