@@ -8,16 +8,24 @@
 	<body>
 		<p id="result"></p>
 		<script>
+			// Gọi hàm toLowerCase() đúng cách
 			let nhapTen = prompt("Nhập tên các ngôi sao").toLowerCase();
 			let stars = [
 				["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"],
 				["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"],
 			];
+
+			// Hàm tìm chòm sao theo tên ngôi sao
 			function findStars(starName, stars) {
-				for (let i = 0; i < stars[0].length; i++) {
-					if (stars[0][i] === starName) {
-						// Trả về chòm sao tương ứng
-						return stars[1][i];
+				for (let i = 0; i < stars.length; i++) {
+					for (let j = 0; j < stars[i].length; j++) {
+						// Kiểm tra ngôi sao (hàng đầu tiên - i = 0)
+						if (i === 0 && stars[i][j].toLowerCase() === starName) {
+							//i === 0: Điều kiện này đảm bảo rằng chúng ta chỉ đang kiểm tra tên ngôi sao ở dòng đầu tiên.
+							//stars[i][j].toLowerCase() === starName: Điều kiện này kiểm tra xem tên ngôi sao nhập vào (starName) có trùng khớp với một trong các tên ngôi sao trong mảng
+							// Trả về chòm sao tương ứng từ hàng thứ hai (i = 1)
+							return stars[1][j];
+						}
 					}
 				}
 				return null; // Không tìm thấy
@@ -25,11 +33,15 @@
 
 			let result = "";
 			let check = findStars(nhapTen, stars);
+
+			// Kiểm tra kết quả từ hàm findStars
 			if (check) {
 				result = `${nhapTen} = ${check}.`;
 			} else {
-				result = "Không ra ngôi sao hợp lệ";
+				result = "Không tìm ra ngôi sao hợp lệ.";
 			}
+
+			// Hiển thị kết quả trên trang web
 			document.getElementById("result").innerText = result;
 		</script>
 	</body>
