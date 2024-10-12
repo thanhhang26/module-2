@@ -7,13 +7,16 @@
 	</head>
 	<body>
 		<script>
-			let nhapSo = +prompt("Nhập chiều dài của mảng");
-			let soNguyen = [];
-			for (i = 0; i < nhapSo; i++) {
-				let element = +prompt("Nhập phần từ của mảng thứ " + i);
-				soNguyen.push(element);
+			function intChange(number1, number2) {
+				let change = number1;
+				number1 = number2;
+				number2 = change;
+				alert(`Sau khi hoán đổi 2 số nguyên: ${number1}, ${number2}`);
 			}
-			alert(soNguyen);
+			let number1 = parseInt(prompt("Nhập vào số nguyên thứ 1:"));
+			let number2 = parseInt(prompt("Nhập vào số nguyên thứ 2:"));
+
+			intChange(number1, number2);
 		</script>
 	</body>
 </html>
