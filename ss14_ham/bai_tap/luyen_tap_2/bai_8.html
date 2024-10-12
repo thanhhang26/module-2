@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 8</title>
+	</head>
+	<body>
+		<script>
+			let nhapSo = +prompt("Nhập chiều dài của mảng");
+			let soNguyen = [];
+			for (i = 0; i < nhapSo; i++) {
+				let element = +prompt("Nhập phần từ của mảng thứ " + i);
+				soNguyen.push(element);
+			}
+			alert("Mảng trước khi đảo là: " + soNguyen);
+
+			function daoMang(arr) {
+				for (let i = 0; i < arr.length / 2; i++) {
+					let temp = arr[i];
+					arr[i] = arr[arr.length - 1 - i]; //- i sẽ giảm chỉ số của phần tử cần truy cập từ cuối mảng. Khi bạn kết hợp tất cả lại với nhau, arr[arr.length - 1 - i] sẽ trả về phần tử ở vị trí thứ i từ cuối mảng.
+					arr[arr.length - 1 - i] = temp;
+				}
+			}
+			daoMang(soNguyen);
+			alert("Mảng sau khi đảo là " + soNguyen);
+		</script>
+	</body>
+</html>

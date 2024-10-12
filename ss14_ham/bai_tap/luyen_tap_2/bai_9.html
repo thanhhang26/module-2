@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 9</title>
+	</head>
+	<body>
+		<script>
+			let nhapSo = +prompt("Nhập chiều dài của mảng:");
+			let soNguyen = [];
+
+			// Nhập phần tử vào mảng
+			for (let i = 0; i < nhapSo; i++) {
+				let element = +prompt("Nhập phần tử thứ " + i);
+				soNguyen.push(element);
+			}
+
+			// Hiển thị mảng vừa nhập
+			alert("Mảng trước khi kiểm tra: " + soNguyen);
+
+			// Nhập số cần kiểm tra
+			let soKiemTra = +prompt("Nhập số cần kiểm tra trong mảng:");
+
+			// Hàm để đếm số lần xuất hiện của số trong mảng
+			function countCharacter(soNguyen, soKiemTra) {
+				let count = 0; // Biến đếm số lần xuất hiện của ký tự
+
+				// Duyệt qua mảng và đếm số lần số cần tìm xuất hiện
+				for (let i = 0; i < soNguyen.length; i++) {
+					if (soNguyen[i] === soKiemTra) {
+						count++;
+					}
+				}
+
+				// Trả về số lần xuất hiện hoặc -1 nếu không tìm thấy
+				if (count > 0) {
+					return count;
+				} else {
+					return -1;
+				}
+			}
+
+			// Gọi hàm và hiển thị kết quả
+			let result = countCharacter(soNguyen, soKiemTra);
+			if (result === -1) {
+				alert(`Số ${soKiemTra} không có trong mảng.`);
+			} else {
+				alert(`Số ${soKiemTra} xuất hiện ${result} lần trong mảng.`);
+			}
+		</script>
+	</body>
+</html>

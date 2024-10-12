@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Giá trị nhỏ nhất</title>
+	</head>
+	<body>
+		<input id="number1" placeholder="Nhập số thứ nhất" />
+		<input id="number2" placeholder="Nhập số thứ hai" />
+		<input id="number3" placeholder="Nhập số thứ ba" />
+		<input type="button" onclick="kiemTra()" value="Check" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let number1 = document.getElementById("number1").value;
+				let number2 = document.getElementById("number2").value;
+				let number3 = document.getElementById("number3").value;
+				let result = timSo(number1, number2, number3);
+				document.getElementById("result").innerText = `Số nhỏ nhất là ${result}`;
+			}
+
+			function timSo(number1, number2, number3) {
+				if (number1 <= number2 && number1 <= number3) {
+					return number1;
+				} else if (number2 <= number2 && number2 <= number3) {
+					return number2;
+				} else {
+					return number3;
+				}
+			}
+		</script>
+	</body>
+</html>

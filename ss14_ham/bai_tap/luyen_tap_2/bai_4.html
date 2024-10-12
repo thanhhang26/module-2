@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<input id="so_nguyen" placeholder="Nhập số nguyên" />
+		<input type="button" onclick="kiemTra()" value="Check" />
+		<p id="result"></p>
+		<script>
+			function kiemTra() {
+				let soNguyen = document.getElementById("so_nguyen").value;
+				let result = kyTu(soNguyen);
+				if (result) {
+					document.getElementById("result").innerText = `${soNguyen} là ký tự số.`;
+				} else {
+					document.getElementById("result").innerText = `${soNguyen} không là ký tự số.`;
+				}
+			}
+			function kyTu(soNguyen) {
+				if (soNguyen >= "0" && soNguyen <= "9") {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>
