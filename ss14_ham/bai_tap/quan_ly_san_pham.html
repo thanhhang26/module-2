@@ -4,6 +4,62 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ứng dụng quản lý sản phẩm</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../bootstrap-5.1.3-dist/css/bootstrap.css" />
+		<script src="../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
 	</head>
-	<body></body>
+	<body>
+		<h1>Quản lý sản phẩm</h1>
+		<input id="name" placeholder="New Product" />
+		<button class="btn btn-sm btn-success" onclick="addNewProducts()">Add</button><br /><br />
+		<span>Quantity: </span><span id="soLuong"></span>
+		<div id="result"></div>
+
+		<script>
+			let productList = ["Iphone", "Samsung Galaxy", "Nokia"];
+			display(productList, result);
+			function display(list) {
+				tableStrings = `<table class="table table-danger table-striped">
+
+					<tr>
+						<th>Product name</th>
+						<th></th>
+						<th></th>
+					</tr>`;
+
+				for (let i = 0; i < list.length; i++) {
+					tableStrings += `<tr>
+						                  <td>${list[i]}</td>
+						                  <td><button class = "btn-edit" onclick = "editProduct(${i})">Edit</button></td>
+						                  <td><button class = "btn-delete" onclick = "deleteProduct(${i})">Delete</button></td>
+					                </tr>`;
+				}
+				tableStrings += `</table>`;
+				document.getElementById("result").innerHTML = tableStrings;
+				document.getElementById("soLuong").innerHTML = productList.length;
+			}
+			function addNewProducts() {
+				let newProduct = document.getElementById("name").value;
+				if (newProduct != "") {
+					productList.push(newProduct);
+				} else {
+					alert("Yêu cầu nhập lại");
+				}
+				display(productList);
+			}
+			function deleteProduct(index) {
+				let conf = confirm("Bạn có muốn xoá sản phẩm tên :" + productList[index] + "?");
+				if (conf) {
+					productList.splice(index, 1); //1 ở đây là xoá từng hàng một
+				}
+				display(productList);
+			}
+
+			function editProduct(index) {
+				let editProduct = prompt(productList[index] + "Nhập tên sản phẩm cần sửa");
+				productList[index] = editProduct;
+				display(productList);
+			}
+		</script>
+	</body>
 </html>
