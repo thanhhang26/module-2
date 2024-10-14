@@ -6,27 +6,32 @@
 		<title>Xây dựng lớp tròn</title>
 	</head>
 	<body>
-		<p id="ban_kinh"></p>
+		<input type="number" id="ban_kinh" placeholder="Nhập bán kính" />
+		<input onclick="kiemTra()" type="button" value="Diện tích" />
 		<p id="dien_tich"></p>
+		<p id="ban_kinh_lap_lai"></p>
+
 		<script>
-			class HinhTron {
-				constructor(banKinh) {
-					this.banKinh = banKinh;
+			function kiemTra() {
+				class HinhTron {
+					constructor(banKinh) {
+						this.banKinh = banKinh;
+					}
+					getRadius() {
+						document.getElementById("ban_kinh_lap_lai").innerText = `Bán kính hình tròn là ${this.banKinh}`;
+						return this.banKinh;
+						//di chuyển lệnh document.getElementById("ban_kinh").innerText = ... lên trước lệnh return, để nó có thể hiển thị giá trị trước khi kết thúc hàm. Sau lệnh return là chương trình kết thúc
+					}
+					getArea(dienTich) {
+						dienTich = Math.PI * this.banKinh * this.banKinh;
+						document.getElementById("dien_tich").innerText = `Diện tích hình tròn là ${dienTich}`;
+					}
 				}
-				getRadius() {
-					document.getElementById("ban_kinh").innerText = `Bán kính hình tròn là ${this.banKinh}`;
-					return this.banKinh;
-					//di chuyển lệnh document.getElementById("ban_kinh").innerText = ... lên trước lệnh return, để nó có thể hiển thị giá trị trước khi kết thúc hàm. Sau lệnh return là chương trình kết thúc
-				}
-				getArea(dienTich) {
-					dienTich = Math.PI * this.banKinh * this.banKinh;
-					document.getElementById("dien_tich").innerText = `Diện tích hình tròn là ${dienTich}`;
-				}
+				let banKinh1 = +document.getElementById("ban_kinh").value;
+				let hinhTron1 = new HinhTron(banKinh1);
+				hinhTron1.getRadius();
+				hinhTron1.getArea();
 			}
-			let banKinh1 = parseFloat(prompt("Nhập độ dài bán kính"));
-			let hinhTron1 = new HinhTron(banKinh1);
-			hinhTron1.getRadius();
-			hinhTron1.getArea();
 		</script>
 	</body>
 </html>

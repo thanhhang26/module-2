@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Xây dựng lớp MyDate</title>
+	</head>
+	<body>
+		<p id="day"></p>
+		<p id="month"></p>
+		<p id="year"></p>
+		<p id="date"></p>
+
+		<script>
+			class MyDate {
+				constructor(intDay, intMonth, intYear) {
+					this.intDay = intDay;
+					this.intMonth = intMonth;
+					this.intYear = intYear;
+				}
+				getDay() {
+					document.getElementById("day").innerHTML = `${this.intDay}`;
+					return this.intDay;
+				}
+				getMonth() {
+					document.getElementById("month").innerHTML = `${this.intMonth}`;
+					return this.intMonth;
+				}
+				getYear() {
+					document.getElementById("year").innerHTML = `${this.intYear}`;
+					return this.intYear;
+				}
+				setDay(intDay) {
+					this.intDay = intDay;
+					document.getElementById("day").innerHTML = `${this.intDay}`;
+				}
+				setMonth(intMonth) {
+					this.intMonth = intMonth;
+					document.getElementById("month").innerHTML = `${this.intMonth}`;
+				}
+				setYear(intYear) {
+					this.intYear = intYear;
+					document.getElementById("year").innerHTML = `${this.intYear}`;
+				}
+			}
+
+			// Nhập ngày tháng năm từ người dùng (ví dụ "26/10/2003")
+			let dateInput = prompt("Nhập ngày tháng năm ban đầu (dd/mm/yyyy)");
+			let dateParts = dateInput.split("/");
+
+			// Tạo đối tượng MyDate với các giá trị từ người dùng
+			let day = parseInt(dateParts[0]);
+			let month = parseInt(dateParts[1]);
+			let year = parseInt(dateParts[2]);
+
+			let date1 = new MyDate(day, month, year);
+
+			// Hiển thị giá trị ngày, tháng, năm
+			date1.getDay();
+			date1.getMonth();
+			date1.getYear();
+
+			// Thay đổi ngày tháng năm (ví dụ thay đổi ngày thành 15)
+			date1.setDay(15);
+			date1.setMonth(12);
+			date1.setYear(2025);
+		</script>
+	</body>
+</html>
