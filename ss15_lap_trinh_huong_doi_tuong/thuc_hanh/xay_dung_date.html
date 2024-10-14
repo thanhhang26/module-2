@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Xây dựng lớp Date</title>
+	</head>
+	<body>
+		<script>
+			class MyDate {
+				constructor(intDay, intMonth, intYear) {
+					this.intDay = intDay;
+					this.intMonth = intMonth;
+					this.intYear = intYear;
+				}
+				getDay() {
+					return this.intDay;
+				}
+				getMonth() {
+					return this.intMonth;
+				}
+				getYear() {
+					return this.intYear;
+				}
+				setDay(intDay) {
+					this.intDay = intDay;
+				}
+				setMonth(intMonth) {
+					this.intMonth = intMonth;
+				}
+				setYear(intYear) {
+					this.intYear = intYear;
+				}
+			}
+
+			// Tạo đối tượng mới với ngày, tháng, năm ban đầu
+			let date1 = new MyDate(26, 10, 2003);
+
+			// Thay đổi ngày, tháng, năm
+			date1.setDay(10);
+			date1.setMonth(10);
+			date1.setYear(2019);
+
+			// Lấy giá trị ngày, tháng, năm và hiển thị
+			let day = date1.getDay();
+			let month = date1.getMonth();
+			let year = date1.getYear();
+
+			alert(day + "/" + month + "/" + year);
+		</script>
+	</body>
+</html>
