@@ -23,7 +23,7 @@
 					document.getElementById("chu_vi").innerText = `Chu vi của hình chữ nhật là: ${chuVi}`;
 				}
 			}
-			let chieuDai = parseInt(prompt("Nhập chiều dài của hình chữ nhật"));
+			let chieuDai = parseInt(prompt("Nhập chiều dài của hình chữ nhật").trim()); //trim() bỏ khoảng trắng, khoảng thừa chỉ lấy dữ liệu
 			let chieuRong = parseInt(prompt("Nhập chiều rộng của hình chữ nhật"));
 			let rectangle1 = new Rectangle(chieuDai, chieuRong);
 			rectangle1.dienTich();
