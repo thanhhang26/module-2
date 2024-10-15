@@ -14,13 +14,11 @@
 					this.intDai = intDai;
 					this.intRong = intRong;
 				}
-				dienTich(dienTich) {
-					dienTich = this.intDai * this.intRong;
-					document.getElementById("dien_tich").innerText = `Diện tích của hình chữ nhật là: ${dienTich}`;
+				dienTich() {
+					document.getElementById("dien_tich").innerText = `Diện tích của hình chữ nhật là: ${this.intDai * this.intRong}`;
 				}
-				chuVi(chuVi) {
-					chuVi = (this.intDai + this.intRong) * 2;
-					document.getElementById("chu_vi").innerText = `Chu vi của hình chữ nhật là: ${chuVi}`;
+				chuVi() {
+					document.getElementById("chu_vi").innerText = `Chu vi của hình chữ nhật là: ${(this.intDai + this.intRong) * 2}`;
 				}
 			}
 			let chieuDai = parseInt(prompt("Nhập chiều dài của hình chữ nhật").trim()); //trim() bỏ khoảng trắng, khoảng thừa chỉ lấy dữ liệu
