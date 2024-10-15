@@ -22,9 +22,8 @@
 						return this.banKinh;
 						//di chuyển lệnh document.getElementById("ban_kinh").innerText = ... lên trước lệnh return, để nó có thể hiển thị giá trị trước khi kết thúc hàm. Sau lệnh return là chương trình kết thúc
 					}
-					getArea(dienTich) {
-						dienTich = Math.PI * this.banKinh * this.banKinh;
-						document.getElementById("dien_tich").innerText = `Diện tích hình tròn là ${dienTich}`;
+					getArea() {
+						document.getElementById("dien_tich").innerText = `Diện tích hình tròn là ${Math.PI * this.banKinh * this.banKinh}`;
 					}
 				}
 				let banKinh1 = +document.getElementById("ban_kinh").value;
