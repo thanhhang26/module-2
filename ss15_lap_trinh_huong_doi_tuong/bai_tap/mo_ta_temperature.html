@@ -16,13 +16,11 @@
 					constructor(doC) {
 						this.doC = doC;
 					}
-					doF(doF) {
-						doF = (this.doC * 9) / 5 + 32;
-						document.getElementById("doF").innerText = `Nhiệt độ F là ${doF}`;
+					doF() {
+						document.getElementById("doF").innerText = `Nhiệt độ F là ${(this.doC * 9) / 5 + 32}`;
 					}
-					doK(doK) {
-						doK = this.doC + 273.15;
-						document.getElementById("doK").innerText = `Nhiệt độ K là ${doK}`;
+					doK() {
+						document.getElementById("doK").innerText = `Nhiệt độ K là ${this.doC + 273.15}`;
 					}
 				}
 				let doC = +document.getElementById("doC").value;
