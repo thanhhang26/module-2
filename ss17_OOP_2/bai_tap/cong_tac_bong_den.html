@@ -10,17 +10,8 @@
 
 		<script>
 			class SwitchButton {
-				constructor(status, lamp) {
-					this.status = status;
-					this.lamp = lamp;
-				}
-
-				getLamp() {
-					return this.lamp;
-				}
-
-				setLamp(lamp) {
-					this.lamp = lamp;
+				constructor() {
+					this.status = false;
 				}
 
 				connectToLamp(electricLamp) {
@@ -28,34 +19,47 @@
 				}
 
 				switchOff() {
-					this.lamp.status = false;
-					return (this.status = "turn off");
+					this.lamp.turnOff();
+					return (this.status = false);
 				}
 
 				switchOn() {
-					this.lamp.status = true;
-					return (this.status = "turn on");
+					this.lamp.turnOn();
+					return (this.status = true);
 				}
 			}
 
 			class ElectricLamp {
-				constructor(status) {
-					this.status = status;
+				constructor() {
+					this.status = false;
 				}
 
 				getStatus() {
 					return this.status;
 				}
+
+				setStatus(status) {
+					this.status = status;
+				}
+
+				turnOff() {
+					this.status = false;
+				}
+
+				turnOn() {
+					this.status = true;
+				}
 			}
 
 			// Tạo đối tượng đèn và công tắc
-			for (i = 0; i < 5; i++) {
-				let electricLamp = new ElectricLamp(false); //Khởi tạo về trạng thái đầu tiên của đèn
-				let switchButton = new SwitchButton(false, electricLamp); //Khởi tạo đối tượng SwitchButton và kết nối với đèn electricLamp
-				alert(switchButton.switchOn());
-				alert(electricLamp.getStatus());
-				alert(switchButton.switchOff());
-				alert(electricLamp.getStatus());
+			let electricLamp = new ElectricLamp(false); //Khởi tạo về trạng thái đầu tiên của đèn
+			let switchButton = new SwitchButton(); //Khởi tạo đối tượng SwitchButton và kết nối với đèn electricLamp
+			switchButton.connectToLamp(electricLamp);
+			for (let i = 1; i <= 10; i++) {
+				switchButton.switchOn();
+				console.log("Bat cong tac " + i + ": ", electricLamp.status);
+				switchButton.switchOff();
+				console.log("Tat cong tac " + i + ": ", electricLamp.status);
 			}
 		</script>
 	</body>
