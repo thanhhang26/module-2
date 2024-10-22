@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 1</title>
+	</head>
+	<body>
+		<script>
+			let nhapSo = parseInt(prompt("Nhập chiều dài của mảng"));
+			let soKhac = [];
+			for (let i = 0; i < nhapSo; i++) {
+				let phanTu = parseInt(prompt("Nhập phần tử thứ " + i));
+				soKhac.push(phanTu);
+			}
+			alert(`Mảng vừa nhập là ${soKhac}`);
+
+			let tangDanDeu = true;
+			let khoangCach = soKhac[1] - soKhac[0];
+			for (let i = 1; i < soKhac.length - 1; i++) {
+				// Kiểm tra khoảng cách giữa các phần tử liên tiếp
+				if (soKhac[i + 1] - soKhac[i] !== khoangCach) {
+					tangDanDeu = false;
+					break;
+				}
+			}
+			if (tangDanDeu) {
+				alert("OK");
+			} else {
+				alert("NO");
+			}
+		</script>
+	</body>
+</html>

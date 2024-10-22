@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 8: Số nguyên tố</title>
+	</head>
+	<body>
+		<script>
+			let input = parseInt(prompt("Nhập chiều dài của mảng"));
+			let array = [];
+
+			// Nhập các phần tử cho mảng
+			for (let i = 0; i < input; i++) {
+				let element = parseInt(prompt("Nhập phần tử thứ " + i));
+				array.push(element);
+			}
+			alert(`Mảng vừa nhập là ${array}`);
+
+			function isPrime(num) {
+				if (num < 2) {
+					return false; // Số nhỏ hơn 2 không phải số nguyên tố
+				}
+				for (let i = 2; i <= Math.sqrt(num); i++) {
+					if (num % i === 0) {
+						return false; // Nếu chia hết, không phải số nguyên tố
+					}
+				}
+				return true; // Nếu không chia hết, là số nguyên tố
+			}
+
+			function checkAllPrime(array) {
+				//Hàm này kiểm tra tất cả các phần tử trong mảng bằng cách sử dụng hàm isPrime đã được định nghĩa trước đó.
+				for (let i = 0; i < array.length; i++) {
+					if (!isPrime(array[i])) {
+						return false; // Nếu tìm thấy số không phải là số nguyên tố, trả về false
+					}
+				}
+				return true; // Tất cả phần tử đều là số nguyên tố
+			}
+
+			let result = checkAllPrime(array);
+			alert(result);
+		</script>
+	</body>
+</html>

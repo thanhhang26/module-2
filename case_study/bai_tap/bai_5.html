@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<script>
+			function findMaxNumber(n) {
+				if (n < 1000 || n > 9999 || !Number.isInteger(n)) {
+					return -1;
+				}
+				let maxNumber = 0;
+				let stringNumber = number.toString();
+				for (let i = 0; i < stringNumber.length; i++) {
+					// Tạo số mới bằng cách loại bỏ chữ số ở vị trí i
+					let newNumber = parseInt(stringNumber.slice(0, i) + stringNumber.slice(i + 1));
+					//slice(0, i): Phương thức slice được sử dụng để lấy một phần của chuỗi. Trong trường hợp này, nó lấy tất cả các ký tự từ vị trí 0 đến vị trí i (không bao gồm vị trí i).
+
+					// Cập nhật maxNumber nếu số mới lớn hơn
+					if (newNumber > maxNumber) {
+						maxNumber = newNumber;
+					}
+				}
+
+				return maxNumber; // Trả về số lớn nhất tìm được
+			}
+
+			let number = parseInt(prompt("Nhập số n"));
+			let result = findMaxNumber(number);
+			alert(`Kết quả: ${result}`);
+		</script>
+	</body>
+</html>

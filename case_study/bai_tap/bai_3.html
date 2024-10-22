@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+	</head>
+	<body>
+		<script>
+			let nhapSo = parseInt(prompt("Nhập độ dài của mảng"));
+			let soKhac = [];
+			for (i = 0; i < nhapSo; i++) {
+				let phanTu = parseInt(prompt("Nhập phần tử thứ " + i));
+				soKhac.push(phanTu);
+			}
+			alert(`Mảng vừa nhập là ${soKhac.join()}`);
+
+			let result = "OK"; // Giả sử mảng đối xứng
+			for (let i = 0; i < soKhac.length / 2; i++) {
+				if (soKhac[i] !== soKhac[soKhac.length - 1 - i]) {
+					result = "NO"; // Nếu phát hiện mảng không đối xứng
+					break;
+				}
+			}
+
+			alert(result);
+		</script>
+	</body>
+</html>

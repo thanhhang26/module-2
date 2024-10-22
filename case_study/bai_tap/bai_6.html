@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 6</title>
+	</head>
+	<body>
+		<script>
+			let input = parseInt(prompt("Nhập chiều dài của mảng"));
+			let array = [];
+			let result = "";
+			for (let i = 0; i < input; i++) {
+				let element = parseInt(prompt("Nhập phần tử thứ " + i));
+				array.push(element);
+			}
+			alert(`Mảng vừa nhập là ${array}`);
+
+			function checkArray() {
+				let hasEven = false;
+				let hasOdd = false;
+
+				for (let i = 0; i < array.length; i++) {
+					if (array[i] % 2 === 0) {
+						hasEven = true; // Có ít nhất một số chẵn
+					} else {
+						hasOdd = true; // Có ít nhất một số lẻ
+					}
+				}
+
+				// Cập nhật kết quả dựa trên các biến hasEven và hasOdd
+				if (hasEven && hasOdd) {
+					result = "-1";
+				} else if (hasEven) {
+					result = "1";
+				} else {
+					result = "0";
+				}
+			}
+
+			checkArray();
+			alert(result);
+		</script>
+	</body>
+</html>
