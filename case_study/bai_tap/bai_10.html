@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 10</title>
+	</head>
+	<body>
+		<script>
+			let inputString = prompt("Nhập vào chuỗi để kiểm tra các nguyên âm:");
+
+			function checkString(str) {
+				let vowelCharacter = ["a", "e", "i", "o", "u"];
+				let vowelArray = [];
+				for (let i = 0; i < inputString.length; i++) {
+					if (vowelCharacter.includes(inputString[i]) && !vowelArray.includes(inputString[i])) {
+						//vowelCharacter.includes(inputString[i]): Kiểm tra xem ký tự tại vị trí i của chuỗi có phải là nguyên âm không.
+						//!vowelArray.includes(inputString[i]): Kiểm tra xem nguyên âm đó đã có trong mảng kết quả chưa. Nếu chưa, nó sẽ được thêm vào mảng vowelArray.
+						// Thêm nguyên âm nếu chưa có trong vowelArray
+						vowelArray.push(inputString[i]);
+					}
+				}
+
+				// Trả về mảng các nguyên âm không trùng lặp
+				return vowelArray;
+			}
+
+			// Gọi hàm và hiển thị kết quả
+			let result = checkString(inputString);
+
+			if (result.length > 0) {
+				alert(`Các nguyên âm trong mảng là: [${result.join(", ")}]`);
+			} else {
+				alert("Không có nguyên âm nào trong mảng.");
+			}
+		</script>
+	</body>
+</html>

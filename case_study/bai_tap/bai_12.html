@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 12</title>
+	</head>
+	<body>
+		<h1>Xây dựng hệ thống quản lí học viên CodeGym</h1>
+		<button class="btn-add" onclick="addNewStudent()">Thêm mới học viên</button>
+		<button class="btn-success" onclick="successStudent()">Sửa thông tin học viên</button>
+		<button class="btn-delete" onclick="deleteStudent()">Xoá học viên</button>
+		<div id="result"></div>
+		<script>
+			let studentList = ["HV - 0001", "HV - 0002", "HV - 0003"];
+			let nameList = ["Nguyễn Văn A", "Nguyễn Văn B", "Nguyễn Thị C"];
+			let classList = ["C1022G1", "C1122G1", "C1222G1"];
+			let emailList = ["nguyenvana@gmail.com", "nguyenvanb@gmail.com", "nguyenthic@gmail.com"];
+			let dateList = ["01/01/2024", "02/02/2024", "03/03/2024"];
+			display(studentList, nameList, classList, emailList, dateList, "result");
+
+			function display(list) {
+				tableStrings = `<table class="table table-danger table-striped">
+					<tr>
+						<th>Mã học viên</th>
+						<th>Tên</th>
+						<th>Lớp</th>
+						<th>Email</th>
+						<th>Ngày sinh</th>
+					</tr>`;
+				for (let i = 0; i < list.length; i++) {
+					tableStrings += `<tr>
+						   <td>${studentList[i]}</td>
+						   <td>${nameList[i]}</td>
+						   <td>${classList[i]}</td>
+						   <td>${emailList[i]}</td>
+						   <td>${dateList[i]}</td>
+						   </tr>`;
+				}
+				tableStrings += `</table>`;
+				document.getElementById("result").innerHTML = tableStrings;
+			}
+		</script>
+	</body>
+</html>
