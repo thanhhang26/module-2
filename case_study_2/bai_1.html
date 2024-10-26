@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 1</title>
+	</head>
+	<body>
+		<script>
+			let input = parseInt(prompt("Nhập chiều dài của mảng (tối đa 50):"));
+			let array = [];
+
+			if (input > 50) {
+				alert("Chiều dài của mảng không được vượt quá 50.");
+			} else {
+				for (let i = 0; i < input; i++) {
+					let element = parseInt(prompt("Nhập phần tử thứ " + (i + 1)));
+					array.push(element);
+				}
+				alert("Mảng vừa nhập là: " + array.join(", "));
+			}
+
+			let sumEven = 0;
+			let sumOdd = 0;
+			for (let i = 0; i < array.length; i++) {
+				if (i % 2 === 0) {
+					sumEven += array[i];
+				} else {
+					sumOdd += array[i];
+				}
+			}
+			alert(sumEven);
+			alert(sumOdd);
+			let result = sumEven - sumOdd;
+			alert(`Kết quả tổng các số ở vị trí chẵn – tổng các số ở vị trí lẻ là ${result}`);
+		</script>
+	</body>
+</html>

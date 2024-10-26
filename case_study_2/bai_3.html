@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+	</head>
+	<body>
+		<script>
+			let inputNumber = parseInt(prompt("Nhập chiều dài của mảng"));
+			let array = [];
+
+			// Nhập các phần tử cho mảng
+			for (let i = 0; i < inputNumber; i++) {
+				let element = parseInt(prompt("Nhập phần tử thứ " + i));
+				array.push(element);
+			}
+			alert(`Mảng vừa nhập là ${array}`);
+
+			function checkArray() {
+				let number1 = 0;
+				let number2 = 1;
+				for (let i = 0; i < array.length; i++) {
+					let result = number1 + number2;
+					number1 = number2; // Cập nhật number1
+					number2 = result; //Cập nhật number2
+				}
+				alert(result);
+			}
+		</script>
+	</body>
+</html>

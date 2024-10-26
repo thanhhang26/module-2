@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2</title>
+	</head>
+	<body>
+		<script>
+			let inputNumber = parseInt(prompt("Nhập chiều dài của mảng"));
+			let array = [];
+
+			// Nhập các phần tử cho mảng
+			for (let i = 0; i < inputNumber; i++) {
+				let element = prompt("Nhập phần tử thứ " + i).trim();
+				array.push(element);
+			}
+			alert(`Mảng vừa nhập là ${array.join(" ")}`);
+
+			function countUpperLowerCase(str) {
+				let upperCaseCount = 0;
+				let lowerCaseCount = 0;
+
+				for (let i = 0; i < str.length; i++) {
+					if (array[i] >= "A" && array[i] <= "Z") {
+						upperCaseCount++;
+					} else if (array[i] >= "a" && array[i] <= "z") {
+						lowerCaseCount++;
+					}
+				}
+
+				return {
+					upperCase: upperCaseCount,
+					lowerCase: lowerCaseCount,
+				};
+			}
+
+			let result = countUpperLowerCase(array);
+			alert(`Số ký tự in hoa: ${result.upperCase}, Số ký tự in thường: ${result.lowerCase}`);
+		</script>
+	</body>
+</html>
