@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 1</title>
+	</head>
+	<body>
+		<script>
+			let inputNumber = parseInt(prompt("Nhập chiều dài của mảng:"));
+			let array = [];
+
+			while (inputNumber > 20) {
+				inputNumber = parseInt(prompt("Chiều dài của mảng không vượt quá 20. Vui lòng nhập lại."));
+			}
+			for (let i = 0; i < inputNumber; i++) {
+				let element = parseInt(prompt("Nhập phần tử thứ " + i));
+				array.push(element);
+			}
+			alert("Mảng vừa nhập là: " + array);
+
+			let sum = 0;
+			for (let i = 0; i < array.length; i++) {
+				if (array[i] % 3 === 0 && array[i] % 5 === 0) {
+					sum += array[i];
+				}
+			}
+			alert(`Tổng các số bội chung của 3 và 5 là ${sum}`);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+	</head>
+	<body>
+		<script>
+			let inputNumber = parseInt(prompt("Nhập chiều dài của mảng:"));
+			let array = [];
+
+			while (inputNumber > 51) {
+				inputNumber = parseInt(prompt("Chiều dài của mảng không vượt quá 51. Vui lòng nhập lại."));
+			}
+			for (let i = 0; i < inputNumber; i++) {
+				let element = parseInt(prompt("Nhập phần tử thứ " + i));
+				array.push(element);
+			}
+			alert("Mảng vừa nhập là: " + array);
+
+			let integerNumber = parseInt(prompt("Nhập số nguyên dương k"));
+			let count = 0;
+			for (let i = 0; i < array.length; i++) {
+				for (let j = i + 1; j < array.length; j++) {
+					if ((array[i] + array[j]) % integerNumber === 0) {
+						count++;
+					}
+				}
+			}
+			alert(`Số lượng cặp số trong mảng có tổng chia hết cho ${integerNumber} là: ${count}`);
+		</script>
+	</body>
+</html>

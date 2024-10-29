@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2</title>
+	</head>
+	<body>
+		<script>
+			let score;
+			do {
+				score = +prompt("Mời nhập điểm của học sinh");
+			} while (score > 100 || score < 0);
+
+			let roundedScore = Math.ceil(score / 5) * 5;
+
+			if (score < 48) {
+				document.write("Không đạt");
+			} else if (roundedScore !== score) {
+				document.write(score + " Điểm được làm tròn thành " + roundedScore + " : Đạt");
+			} else {
+				document.write(score + ": Đạt");
+			}
+		</script>
+	</body>
+</html>
