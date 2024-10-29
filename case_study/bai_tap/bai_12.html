@@ -117,7 +117,7 @@
 			function editStudent(index) {
 				let findId = prompt("Nhập mã học viên").trim();
 				let studentIndex = -1;
-				for (i = 0; i < data.length; i++)
+				for (let i = 0; i < data.length; i++)
 					if (data[i].id === findId) {
 						studentIndex = i;
 						break;
@@ -149,7 +149,7 @@
 			function deleteStudent() {
 				let findId = prompt("Nhập mã học viên").trim();
 				let studentIndex = -1;
-				for (i = 0; i < data.length; i++) {
+				for (let i = 0; i < data.length; i++) {
 					if (data[i].id === findId) {
 						studentIndex = i;
 						break;
